@@ -126,7 +126,7 @@ if __name__ == "__main__":
     logger.info(">> transformer_pipeline saved")
 
     with open('./artifacts/dict_vectorizer.pkl', 'wb') as dv_f:
-        pickle.dump(transformer_pipeline, dv_f)
+        pickle.dump(dict_vectorizer, dv_f)
     logger.info(">> dict_vectorizer saved")
 
     with open('./artifacts/rf_model.pkl', 'wb') as rfm_f:
