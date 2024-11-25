@@ -2,7 +2,7 @@
 
 ## Problem description
 
-> Can we predict prices of airbnb listings based on their features?
+___Q: Can we predict prices of airbnb listings based on their features?___
 
 The short answer is YES. To prove it I trained a Machine Learning Model using data from five U.S. cities:
 - Los Angeles, California
@@ -75,19 +75,35 @@ These datasets have many features that can be used to train models but I only se
     pip install pipenv  #--(Only if not installed already)
     pipenv install
     ```
-1. Test the prediction service locally
+1. Activate the virtual environment
+    ```
+    pipenv shell
+    ```
+1. Deploy the prediction service locally
     ```
     bash build-and-local-deploy.sh
+    ```
+1. Test the prediction service locally in another terminal (Don't forget to activate the virtual environment in the new terminal before running the script)
+    ```
     python tests/test_predict.py --host localhost:9696
     ```
 
 ## Test the prediction service on AWS
+
+### Only test
+1. Test the prediction service on AWS. If the domain is not working then follow the steps in the next section to deploy and test the service with your own AWS account.
+    ```
+    python tests/test_predict.py --host airbnb-price-prediction-env.eba-pwdyp32x.us-east-1.elasticbeanstalk.com
+    ```
+
+### Deploy and test
+
 1. Login to AWS using AWS CLI
 1. Create an environment variable for you profile
     ```
     export AWS_EB_PROFILE=XXXXXXXXXXXXX
     ```
-1. Deploy the service
+1. Deploy the prediction service on AWS
     ```
     bash aws-deploy.sh
     ```
@@ -95,3 +111,4 @@ These datasets have many features that can be used to train models but I only se
     ```
     python tests/test_predict.py --host <domain>
     ```
+
