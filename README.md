@@ -62,6 +62,48 @@ I used datasets from the official airbnb data repository: https://insideairbnb.c
 
 These datasets have many features that can be used to train models but I only selected some of them for this version. The full dictionary of these datasets can be viewed in `data/raw/Inside Airbnb Data Dictionary.xlsx`
 
+## Project structure
+
+The project is organized as follows:
+
+```
+.
+├── data
+│   ├── clean
+│   │   ├── test.csv
+│   │   └── train.csv
+│   └── raw
+│       ├── Inside Airbnb Data Dictionary.xlsx
+│       ├── listings-united_states-california-los_angeles.csv.gz
+│       ├── listings-united_states-california-san_diego.csv.gz
+│       ├── listings-united_states-illinois-chicago.csv.gz
+│       ├── listings-united_states-texas-austin.csv.gz
+│       └── listings-united_states-texas-dallas.csv.gz
+├── notebooks
+│   ├── data_cleaning.ipynb
+│   ├── exploratory_data_analysis.html
+│   ├── exploratory_data_analysis.ipynb
+│   └── model_selection_and_parameter_tuning.ipynb
+├── screenshots
+│   ├── aws-deploy-01.png
+│   └── aws-deploy-02.png
+├── src
+│   ├── artifacts
+│   │   ├── dict_vectorizer.pkl
+│   │   ├── rf_model.pkl
+│   │   └── transformer_pipeline.pkl
+│   ├── predict.py
+│   └── train.py
+├── tests
+│   └── test_predict.py
+├── Dockerfile
+├── Pipfile
+├── Pipfile.lock
+├── README.md
+├── aws-deploy.sh
+└── build-and-local-deploy.sh
+```
+
 ## Quickstart
 
 1. Clone the repository in a desired directory
